@@ -1,4 +1,4 @@
-2
+32
 # test_http_server
 
 build:

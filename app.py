@@ -50,12 +50,12 @@ class GetHandler(
             logging.error('FILE_CONTENT: ' + "exception")
         SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
         try:
-                conn = psycopg2.connect(
-                database=os.environ.get('DB_DBNAME', 'f'), user=os.environ.get('DB_USER', 'f'), password=os.environ.get('DB_PASSWORD', 'f'), host=os.environ.get('DB_HOST', 'f'), port= os.environ.get('DB_PORT', 81)
-                ) 
-                logging.error('Connected logged')
+            conn = psycopg2.connect(
+            database=os.environ.get('DB_DBNAME', 'f'), user=os.environ.get('DB_USER', 'f'), password=os.environ.get('DB_PASSWORD', 'f'), host=os.environ.get('DB_HOST', 'f'), port= os.environ.get('DB_PORT', 81)
+            ) 
+            logging.error('Connected logged')
         except (Exception, psycopg2.DatabaseError) as error:
-                logging.error('Error logged: ' + error)
+                logging.error('Error logged: ')
         
     def do_POST(self):
         logging.error(self.headers)

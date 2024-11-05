@@ -55,7 +55,7 @@ class GetHandler(
             ) 
             logging.error('Connected logged')
         except (Exception, psycopg2.DatabaseError) as error:
-                logging.error('Error logged: ')
+            logging.error('Error logged: ')
         
     def do_POST(self):
         logging.error(self.headers)

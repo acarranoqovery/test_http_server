@@ -39,15 +39,15 @@ class GetHandler(
         logging.error('DB USER: ' + os.environ.get('DB_USER', 'not_replaced_db_user'))
         logging.error('DB PSW: ' + os.environ.get('DB_PASSWORD', 'not_replaced_db_password'))
         logging.error('FILE_PATH: ' + os.environ.get('FILE_PATH', 'not_replaced_file_path'))
-        try:
-            f = open(os.environ.get('FILE_PATH', 'not_replaced_file_path'), "r")
-            logging.error('here')
-            print(f.read())
-            logging.error('here2')
-            logging.error('FILE_CONTENT: ' + f.read())
-            logging.error('here3')
-        except (Exception, psycopg2.DatabaseError) as error:
-            logging.error('FILE_CONTENT: ' + "exception")
+        #try:
+        #    f = open(os.environ.get('FILE_PATH', 'not_replaced_file_path'), "r")
+         #   logging.error('here')
+         #   print(f.read())
+         #   logging.error('here2')
+        #    logging.error('FILE_CONTENT: ' + f.read())
+         #   logging.error('here3')
+        #except (Exception, psycopg2.DatabaseError) as error:
+        #    logging.error('FILE_CONTENT: ' + "exception")
         SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
         try:
             conn = psycopg2.connect(

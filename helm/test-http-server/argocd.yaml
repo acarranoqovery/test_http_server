@@ -1,0 +1,14 @@
+project: project2
+source:
+  repoURL: https://github.com/acarranoqovery/test_http_server.git
+  path: helm/test-http-server
+  targetRevision: HEAD
+  helm:
+    parameters:
+      - name: autoscaling.minReplicas
+        value: '2'
+      - name: replicaCount
+        value: '2'
+destination:
+  server: https://kubernetes.default.svc
+  namespace: default

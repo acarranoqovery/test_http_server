@@ -8,7 +8,7 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
-  selector:
+  selectorAAA:
     matchLabels:
       {{- include "test-http-server.selectorLabels" . | nindent 6 }}
   template:
